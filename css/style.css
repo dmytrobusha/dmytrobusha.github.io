@@ -1,0 +1,500 @@
+/*13 *-for all object*/
+*{
+	box-sizing: border-box; /*14 correct object sizing*/
+}
+/*18*/
+a{
+	color: #fff;/*19  color fonts in a*/
+	text-decoration: none;/*20 wout underline*/
+}
+/*15*/
+body{
+	background-color: #0B0B0B;/*16*/
+	color: #fff;/*17  color fonts*/
+	font-size: 24px;/*21 text size*/
+	line-height: 28px;/*22*/
+	font-family: 'Roboto Condensed', sans-serif;/*24 insert from google fonts and template*/
+	font-weight: 400;/*25 400 regular wout px*/
+}
+/*26 dot for class*/
+.header{
+	height: 100vh;/*27 100% in height*/
+	position: absolute;/*86 */
+	z-index: 5;/*87 make header upper*/
+	background: rgba(11, 11, 11, 0.3);/*88 make shadow*/
+	right: 0;/*89 work with left: 0, for the full width shadow*/
+	left: 0;/*90 work width 89*/
+}
+/*28*/
+.container{
+	padding: 0 15px;/*29 text and objects in container will have internal indent "отступ" 0px top & bottom 15px left & right*/
+	max-width: 1230px;/*30 container size + padding 15px+15px, max-wout scroll, image will not be bigger*/
+	margin: 0 auto;/*31 for block "с заданной шириной" centering using marging auto, indent "отступ" 0px top & bottom auto left & right*/
+}
+/*32*/
+.header-top{
+	display: flex;/*33 use for internal elements logo&btn with just-content, for positioning on opposite "разным" sides */
+	justify-content: space-between;/*34 for display: flex*/
+}
+/*35*/
+.logo{
+	padding-top: 36px;/*36 internal indent*/
+	margin-bottom: 29px;/*37 external indent*/
+}
+/*38*/
+.header-btn{
+	width: 60px;/*39*/
+	height: 60px;/*40*/
+	border: 1px solid #fff;/*41 border thickness, solid as line*/
+	margin-top: 31px;/*46 external ident*/
+	background: rgba(255, 255, 255, 0.1);/*47 background transparent, from template*/
+	cursor: pointer;/*48 show hand-click when mouse is over*/
+	display: flex;/*49 "how to arrange items" on flex*/
+	flex-direction: column;/*50 change direction from left to right on top to bottom, work with flex on*/
+	align-items: center;/*51 after flex-direction: column; items in header-btn locate in centre X axis (by default Y axis), work with flex on*/
+	justify-content: center;/*52 items in header-btn locate in centre Y axis, work with flex on*/
+}
+/*42  form of recording for div in .header-btn*/
+.header-btn div{
+	width: 36px;/*43*/
+	height: 2px;/*44*/
+	background-color: #fff;/*45 frame color*/
+	margin: 5px 0;/*53 external indent for lines top,bottom-5px, left,right-0px; 0 because items are centered and auto not needed*/
+}
+/*54*/
+.header-content__title{
+	font-family: 'Roboto', sans-serif;/*55 insert from google fonts and template*/
+	font-size: 96px;/*56 text size*/
+	line-height: 112px;/*57*/
+	margin-bottom: 40px;/*58 external indent*/
+}
+/*59*/
+.header-content__text{
+	width: 284px;/*60 to narrow the text as on template*/
+	margin-bottom: 25px;/*61 external indent*/
+}
+/*62 header-content__btn it's link and it's line element*//*211 rename button from "header-content__btn" to "page-btn"*/
+.page-btn{
+	display: inline-block;/*63 change line element on block element*/
+	border: 1px solid #fff;/*64 border thickness, solid as line*/
+	padding: 30px 62px;/*65 internal indent for border increase*/
+	background: rgba(255, 255, 255, 0.15);/*66 background transparent, from template*/
+	transition: all .5s;/*69 animation slowdown "замедление" on 0.5 sec, all-for all element, added to parent*/
+}
+/*67 hover-execute when mouse is over*/
+.page-btn:hover{
+	background-color: #770302;/*68 color change*/
+}
+/*247 class for expanded menu*/
+.menu{
+	background-color: #0B0B0B;/*248 background color*/
+	position: absolute;/*249 wout paranet, use for top and left*/
+	top: 0;/*250 use with position: absolute*/
+	left: -100%;/*251 use with position: absolute*//*297 change left: 0 on left: -100% for hide menu*/
+	width: 100%;/*252 menu on 100% width*/
+	transition: all .5s;/*304 animation slowdown "замедление" on 0.5 sec, all-for all element, added to parent*/
+	z-index: 7;/*306*/
+}
+/*299 if class typing wout " " and double class active "menu" and "active", execute with style*/
+.menu.active{
+	left: 0;/*300 change left: -100% on left: 0 for show menu*/
+}
+/*279 add for parent close-btn, bouble class for save container properties*/
+.container-menu{
+	position: relative;/*280 start position for "close-btn"*/
+}
+/*253 class for close-btn*/
+.close-btn{
+	width: 50px;/*254 size of close-btn*/
+	height: 50px;/*255 size of close-btn*/
+	/*background-color: #0B0B0B;/*256 test background color*//*296 delate background*/
+	position: absolute;/*257 wout paranet, use for top and right*//*280(1) end position for "close-btn", work with position: relative;*/
+	top: 31px;/*281 use with position: absolute, for position like button on main screen*/
+	right: 15px;/*258 use with position: absolute*//*301 shange right: from 0 to 15px, when use position: absolute; padding not work*/
+	cursor: pointer;/*282 show hand-click when mouse is over*/
+}
+/*283 for make cross(X), put "," - for style after and before*/
+.close-btn::after, .close-btn::before{
+	content: "";/*284 for use after and before*/
+	width: 70px;/*285 size of cross*/
+	height: 2px;/*286 size of cross*/
+	background-color: #fff;/*287 test background color*//*295 change color like on template*/
+	position: absolute;/*288 for active previous properties*/
+	transform-origin: left;/*293 property sets the origin (начало координат)*/
+}
+/*289 for cross rotate*/
+.close-btn::after{
+	transform: rotate(45deg);/*291 for cross rotate*/
+}
+/*290 for cross rotate*/
+.close-btn::before{
+	transform: rotate(-45deg);/*292 for cross rotate*/
+	bottom: -1px;/*294 move item in bottom*/
+}
+/*259 class for menu__list*/
+.menu__list{
+	height: 100vh;/*260 menu on 100vh height*/
+	display: flex;/*261 on flex*/
+	align-items: center;/*262 text locate in centre Y axis, work with flex on*/
+}
+/*263 for ul in class menu__list*/
+.menu__list ul{
+	list-style: none;/*264 by default li has dots, make witout dots*/
+}
+/*265 for a in class menu__list*/
+.menu__list a{
+	font-size: 48px;/*266 text size*/
+	line-height: 56px;/*267 get size for template*/
+	font-weight: bold;/*268 */
+	padding: 30px 25px 14px 0;/*269 internal indent for text of menu__list, 25px for more big size of border*/
+	border-bottom: 3px solid #B70021;/*270 make border like on template, border in bottom side*/
+	display: inline-block;/*271 change default value, from inline to inline-block*/
+	min-width: 368px;/*272 make border more big size*/
+	transition: all .5s;/*275 animation slowdown "замедление" on 0.5 sec, all-for all element, added to parent*/
+}
+/*273  hover-execute when mouse is over, for page-btn in class footer-btn*/
+.menu__list a:hover{
+	border-color: #fff;/*274 change border color, when mouse is over*/
+	color: #B70021;/*275 for change text color, when mouse is over*/
+	transform: scale(1.2);/*276 for increase size of text*/
+	margin-left: 37px;/*277 for shift in right side, when mouse is over*/
+}
+/*78 */
+.slider__item{
+	height: 100vh;/*79 by default height = 0, 100vh-to the full height of screen*/
+	background-repeat: no-repeat;/*80 by default images are repeated*/
+	background-size: cover;/*81 by default, if your resolution is less than the image resolution, the image is cropped*/
+	background-position: center center;/*82 ???*/
+}
+/*92 refer to the object with the google crome code viewer*/
+.slider .slick-dots button{
+	width: 15px;/*93 size for a dots*/
+	height: 15px;/*94 size for a dots*/
+	border-radius: 50%;/*95 make dots round*/
+	background-color: #0B0B0B;/*96*/
+	border: none;/*97 by default object has a border*/
+	padding: 0;/*98  by default object has padding*/
+	font-size: 0;/*99 by default object has text size*/
+	cursor: pointer;/*109 show hand-click when mouse is over*/
+	outline: none;/*110 by default when a dot is selected has a blue border*/
+}
+/*100 refer to the object with the google crome code viewer*/
+.slider .slick-dots .slick-active button{
+	background-color: #fff;/*101 when image is active dot has white color*/
+}
+/*102 for all li where locate dots*/
+.slider .slick-dots li{
+	display: inline-block;/*103 change default value*/
+	margin: 0 5px;/*104 change default value and make space between dots*/
+}
+/*105*/
+.slider .slick-dots{
+	/*margin-top: -55px;/*106 change location for dots*/
+	margin: -55px auto 0;/*112 auto - locate a dots in container frame width max-width: 1200px*/
+	position: relative;/*107 for active z-index*/
+	z-index: 6;/*108 parrent has z-index 5*/
+	max-width: 1230px;/*111 locate a dots in middle as container, work with margin*//*311 change 1200 on 1230 like container, for dots space*/
+	padding: 0 15px;/*312 internal indent for dots, adding for left indent when resolution decrease, wout padding dots near to left side*/
+}
+/*118*/
+.statistics{
+	margin: 105px 0 100px;/*119 external indent for section*/
+}
+/*120*/
+.statistics-items{
+	display: flex;/*121 work with justify-content*/
+	justify-content: space-around;/*122 locate itmes among themselves, work with display: flex*/
+	text-align: center;/*134 locate text in center*/
+}
+/*123*/
+.statistics-item__title{ 
+	margin-bottom: 19px;/*124 external indent*/
+}
+/*125*/
+.statistics-item__num{
+	font-size: 96px;/*126 get size from template */
+	line-height: 112px;/*127 get size from template*/
+	margin-bottom: 7px;/*128 get size from template*/
+	font-family: 'Roboto', sans-serif;/*135 insert from google fonts and template*/
+}
+/*129*/
+.statistics-item__num span{
+	font-size: 24px;/*130 get size from template*/
+	line-height: 28px;/*131 get size from template*/
+	margin-left: -20px;/*136 span locate near to another text*/
+}
+/*132*/
+.statistics-item__descr{
+	color: #B70021;/*133 get color from template*/
+}
+/*138 second class for "plus" and start position "position: relative"*/
+.statistics-item__num--speed span{
+	display: inline-block;/*139 change default value*/
+	position: relative;/*142 start position for "plus"*/
+}
+/*140 make before for showing "plus"*/
+.statistics-item__num--speed span::before{
+	content: "+";/*141 make for "plus"*/
+	position: absolute;/*143 end position for "plus", work with position: relative;(142)*/
+	top: -60px;/*144 move "plus" on top*/
+}
+/*147 class for section "images" for next image on template*//*310 rename from images on video*/
+.video{
+	margin-bottom: 100px;/*148 external indent*/
+}
+/*161 class for the items "advantages-descr" and "advantages__img"*/
+.advantages-inner__row{
+	margin-bottom: 100px;/*162 external indent*/
+	display: flex;/*163 on flex*/
+	justify-content: space-between;/*164 items are located among themselves (между собой)(between each other), work with flex on*/
+	align-items: center;/*172 text locate in centre Y axis, work with flex on*/
+	position: relative;/*177 start position for "title"*/
+}
+/*173 class for the title*/
+.advantages__title{
+	line-height: 42px;/*174 line height*/
+	color: #B70021;/*175 text color*/
+	font-size: 36px;/*176 text size*/
+	position: absolute;/*178 end position for "title", work with position: relative;(177)*/
+	top: 0;/*179 item locate to top*/
+	/*left: 0;/*180 item locate to left (delate)*/
+}
+/*182 second class for the title*/
+.advantages__title--bottom{
+	right: 0;/*183 item locate to right*/
+	bottom: 0;/*184 item locate to bottom*/
+	top: auto;/*185 we are using double class, in previous class we used top: 0; and confuse double class, we need top: auto; for divide*/
+}
+/*165 class for the text*/
+.advantages__text{
+	width: 303px;/*166 width for the text space as on the template*/
+}
+/*167 class for the list*/
+.advantages__text ul{
+	list-style: none;/*168 by default li has dots, make witout dots*/
+}
+/*169 class for the items "advantages__title" and "advantages__text"*/
+.advantages-descr{
+	max-width: 570px;/*170 to position the text closer to the image*/
+	width: 100%;/*171 for active max-width: 570px;(170)*/
+}
+/*194 class for design__images*/
+.design__images{
+	margin-bottom: 100px;/*195 external indent*/
+}
+/*196 class for design-row*/
+.design-row{
+	display: flex;/*197 on flex*/
+	justify-content: space-between;/*198 items are located among themselves (между собой)(between each other), work with flex on*/
+	margin-bottom: 100px;/*238 external indent for the space after text*/
+}
+/*199 class for the items "design-row__item-num" and "design-row__item-text"*/
+.design-row__item{
+	max-width: 570px;/*200 width for text area*/
+	width: 100%;/*201 for active max-width: 570px;(200)*/
+	padding-right: 15px;/*206 internal indent for "design-row__item-text"*/
+	display: flex;/*207 on flex*/
+	justify-content: space-between;/*208 divide "design-row__item-num" and "design-row__item-text" between each other, work with flex on*/
+}
+/*202 class for the number*/
+.design-row__item-num{
+	color: #B70021;/*203 text color*/
+}
+/*204 class for the text*/
+.design-row__item-text{
+	max-width: 465px;/*205 width for text area*//*210 change 450px on 465px for showing fifth lines*/
+	padding-top: 25px;/*209 internal indent for text in class "design-row__item-text"*/
+}
+/*219 class for the footer*/
+.footer{
+	background-color: #690102;/*220 background color*/
+	padding: 83px 0 20px;/*221 use padding for increase red space (margin - increase black space), internal indent "отступ" 83px top, bottom 20px, left & right 0px*/
+}
+/*222 class for the footer footer-btn*/
+.footer-btn{
+	text-align: center;/*223 for centering */
+	margin-bottom: 83px;/*224 external indent*/
+}
+/*239 hover-execute when mouse is over, for page-btn in class footer-btn*/
+.footer-btn .page-btn:hover{
+	background-color: #0B0B0B;/*240 change btn color when mouse is over*/
+}
+/*225 class for the footer-copy*/
+.footer-copy{
+	text-align: center;/*226 inline elements aligned (выравниваются) by centre X axis*/
+	font-weight: 700;/*227 font bold*/
+}
+/*228 for ul in class footer-copy*/
+.footer-copy ul{
+	list-style: none;/*229 by default li has dots, make witout dots*/
+}
+/*230 for li in class footer-copy*/
+.footer-copy li{
+	display: inline-block;/*231 change default value, from block to inline-block*/
+	padding: 0 10px;/*232 internal indent "отступ" 0px top, bottom 0px, left & right 10px*/
+	position: relative;/*233 start position for "|"*/
+}
+/*234 make before for showing "|", "+ li" - exclude first element of "li" */
+.footer-copy li + li::before{
+	content: "|";/*235 make for "|"*/
+	position: absolute;/*236 end position for "|", work with position: relative;(233)*/
+	left: -5px;/*237 shift from left side for "|"*/
+}
+/*313 @media must be at the end of the line*/
+
+
+/*344 commenting html code from section class="design" to footer*/
+/*345 change screen resolution to 1220px and make @media (max-width: 1220px)*/
+@media (max-width: 1220px){
+	/*346 make indent text between img*/
+	.advantages__text{
+		padding-left: 20px;/*347 internal indent*/
+	}
+	/*374 commenting html code footer*/
+	/*375 for change image resolution*/
+	.design__images img{
+		width: 100%;/*376 decrease image with width on 100% screen*/
+	}
+}
+
+/*377 change screen resolution to 1020px and make @media (max-width: 1020px)*/
+@media (max-width: 1020px){
+	/*378 change from display: flex; to display: block; for locate items by Y axis*/
+	.design-row{
+		display: block;/*379 make div like block element*/
+	}
+	/*380 change width for .design-row__item like parent*/
+	.design-row__item{
+		max-width: 100%;/*381 stretch to width by div size*/
+	}
+	/*382 change width for .design-row__item-text like child*/
+	.design-row__item-text{
+		max-width: 100%;/*383 stretch to width by div size*/
+	}
+	/*384 change indent for (.design__images) and (.design-row)*/
+	.design__images, .design-row{
+		margin-bottom: 50px;/*385 change external indent*/
+	}
+	/*386 change indent for .design-row__item*/
+	.design-row__item{
+		margin-bottom: 30px;/*387 change external indent*/
+	}
+}
+
+/*348 change screen resolution to 930px and make @media (max-width: 930px)*/
+@media (max-width: 930px){
+	/*349 for position advantages-inner__row*/
+	.advantages-inner__row{
+		flex-wrap: wrap;/*350 for shift items when they are close to themselves*/
+		justify-content: center;/*351 change justify-content for centering*/
+	}
+	/*352 to disable (для отключения) properties .advantages__title*/
+	.advantages__title{
+		position: static;/*353 off property position: absolute;(178)*/
+	}
+	/*354 change text position*/
+	.advantages-descr{
+		text-align: center;/*355 change text position, text aligned (выравниваются) by centre X axis*/
+	}
+	/*356 change text position*/
+	.advantages__text{
+		margin: 25px auto;/*357 external indent, auto position text in center*/
+		padding-left: 0;/*358 interal left indent*/
+	}
+	/*360 pick up 2nd .advantages-descr on top of .advantages-inner__row--mobile*/
+	.advantages-inner__row--mobile .advantages-descr{
+		order: -1;/*361 change locate (priority) for text*/
+		display: flex;/*364 flex on*/
+		flex-direction: column-reverse;/*365 change direction .advantages__title and .advantages__text, work with flex on*/
+	}
+	/*362 change indent*/
+	.advantages-inner__row{
+		margin-bottom: 50px;/*363 change external bottom indent*/
+	}
+
+}
+
+/*329 commenting html code from section class="video" to footer*/
+/*330 change screen resolution to 820px and make @media (max-width: 820px)*/
+@media (max-width: 820px){
+	/*388*/
+	.statistics{
+		margin: 80px 0 50px;/*389*/
+	}
+	/*331 for shift .statistics-item (3 numbers)*/
+	.statistics-items{
+		flex-wrap: wrap;/*332 for shift items when they are close to themselves*/
+	}
+	/*333 more space for shifted items*/
+	.statistics-item{
+		padding: 50px;/*334 internal indent*/
+	}
+}
+/*366 change screen resolution to 650px and make @media (max-width: 650px)*/
+@media (max-width: 650px){
+	/*367 for change image resolution*/
+	.advantages__img img{
+		width: 100%;/*368 decrease image with width on 100% screen*/
+	}
+}
+
+/* change screen resolution to 440px and make @media (max-width: 440px)*/
+@media (max-width: 440px){
+	/* when screen resolution 440px header-content__title too big*/
+	.header-content__title {
+		font-size: 80px;/* change text size*/
+		line-height: 90px;/* change line-height*/
+		margin-bottom: 20px;/* change external indent*/
+	}
+}
+/*314 commenting html code from section class="statistics" to footer*/
+/*315 change screen resolution to 320px and make @media (max-width: 410px)*/
+@media (max-width: 410px){
+	/*316 when screen resolution 320px logo too big*/
+	.logo img{
+		width: 200px;/*317 for image change resolution in width*/
+	}
+	/*318 when screen resolution 320px header-content__title too big*/
+	.header-content__title {
+		font-size: 70px;/*319 change text size*/
+		line-height: 85px;/*320 change line-height*/
+		margin-bottom: 20px;/*321 change external indent*/
+	}
+	/*322 for active .menu__list a { min-width: 100%; }*/
+	.menu__list ul {
+		min-width: 100%;/*323 for active min-width .menu__list a*/
+	}
+	/*324 when screen resolution 320px menu__list a too big*/
+	.menu__list a {
+		font-size: 30px;/*325 change text size*/
+		line-height: 44px;/*326 change line-height*/
+		padding: 19px 10px 7px 0;/*327 change internal indent*/
+		min-width: 100%;/*328 for stretch border on 100% of screen*/
+	}
+	/*335 when screen resolution 320px statistics-item too big*/
+	.statistics-item{
+		padding: 25px 0;/*336 internal indent*/
+	}
+	/*337 when screen resolution 320px statistics too big*/
+	.statistics{
+		margin: 80px 0 50px;/*338 external indent*/
+	}
+	/*339 when screen resolution 320px page-btn too big*/
+	.page-btn{
+		padding: 25px 45px;/*340 internal indent*/
+	}
+	/*341 commenting html code from section class="video" to footer*/
+	/*342 when screen resolution 320px video too big*/
+	.video{
+		margin-bottom: 50px;/*343 external indent*/
+	}
+	/*369 when screen resolution 320px text too big*/
+	.body{
+		font-size: 20px;/*370 change text size*/
+		line-height: 24px;/*371 change line height*/
+	}
+	/*372 change .advantages__text from width: 303px; to width: 100%;*/
+	.advantages__text{
+		width: 100%;/*373 stretch to width by div size*/
+	}
+}

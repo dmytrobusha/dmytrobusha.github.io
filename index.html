@@ -1,11 +1,221 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Hello</title>
-
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0"><!--311 with string for adaptive-->
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Tesla</title>
+	<!--23 "how to connect fonts" go to the site fonts.google.com, find fonts from template Roboto and Roboto Condensed, after adding choose families selected->customize->bold 700 reffering to template and always in lenguages choose Cyrillic, after choose embed and copy standart to html as first link, Specify in CSS to css-->
+	<link href="https://fonts.googleapis.com/css?family=Roboto|Roboto+Condensed:400,700&display=swap&subset=cyrillic" rel="stylesheet">
+	<link rel="stylesheet" href="css/reset.css">
+	<!--70 "how add slick" "https://kenwheeler.github.io/slick/"->choose "download now"->extract from zip file click.css to css folder and file slick.min.js or slick.min.js"if we want editing this file" to js folder-->
+	<link rel="stylesheet" href="css/slick.css"><!--71 connect slick.css-->
+	<link rel="stylesheet" href="css/style.css"><!--72 "how" style.css should be the last-->
 </head>
 <body>
-	Hello
+
+	<header class="header"> <!--1 add tag with class-->
+		<div class="container"> <!--2 container for width 1200px-->
+			<div class="header-top"><!--3 tag for logo and button-->
+				<div class="logo"><!--4 tag logo-->
+					<a href="#"><!--5 link with atribut, # - заглушка, main paige-->
+						<img src="images/logo.png" alt=""><!--6 add logo image, alt-text, if image not loading-->
+					</a>
+				</div>
+				<div class="header-btn"><!--7 add button-->
+					<div></div><!--8 three lines-->
+					<div></div>
+					<div></div>
+				</div>
+			</div>
+			<div class="header-content"><!--9 content in header-->
+				<h1 class="header-content__title"><!--10 title in header-content-->
+					Roadster
+				</h1>
+				<div class="header-content__text"><!--11 text in header-content-->
+					Самый быстрый автомобиль в мире, с рекордным ускорением, дальностью и производительностью.
+				</div>
+				<a class="page-btn" href="#"><!--12 button "Хочу тест драйв" in header-content--><!--210 rename button from "header-content__btn" to "page-btn"-->
+					Хочу тест драйв
+				</a>
+			</div>
+		</div>
+	</header>
+	<!--305 cut <nav class="menu" with cascade, from header to body-->
+	<nav class="menu"><!--241 make div for menu like on template for expanded menu-->
+		<div class="container container-menu"><!--242 add for centering--><!--278 change class container on container container-menu, bouble class for close btn and position relative-->
+			<div class="close-btn"><!--243 div for close item-->
+
+			</div>
+			<div class="menu__list"><!--244 div for list on expanded menu-->
+				<ul><!--245 add ul - tag defines an unordered (неупорядоченный)-->
+					<li><a href="#">Узнать цену</a></li><!--246 add li - tag defines a list item-->
+					<li><a href="#">Характеристики</a></li>
+					<li><a href="#">Тест Драйв</a></li>
+					<li><a href="#">Новости</a></li>
+					<li><a href="#">Контакты</a></li>
+				</ul>
+			</div>
+		</div>
+	</nav>
+
+	<section class="slider-top"><!--75 locate images for slider in lower layer under text-->
+		<div class="slider"><!--76 make additional div-->
+			<div class="slider__item" style="background-image: url(images/slide-1.jpg);"></div><!--77 make div for each images, with sltyle for php-->
+			<div class="slider__item" style="background-image: url(images/slide-2.jpg);"></div>
+			<div class="slider__item" style="background-image: url(images/slide-3.jpg);"></div>
+		</div>
+	</section>
+	<section class="statistics"><!--113 make section for next block in template-->
+		<div class="container"><!--114 containe in container for all screen centering-->
+			<div class="statistics-items"><!--115 div for the following items-->
+				<div class="statistics-item"><!--116 on tamplate there is tree items, make tree items-->
+					<div class="statistics-item__title"><!--117 inside the object there is title, number and description-->
+						Двигатель
+					</div>
+					<div class="statistics-item__num"><!--117 inside the object there is title, number and description-->
+						2,1 <span>сек</span>
+					</div>
+					<div class="statistics-item__descr"><!--117 inside the object there is title, number and description-->
+						разгон до 100 км
+					</div>
+				</div>
+				<div class="statistics-item"><!--116 on tamplate there is tree items, make tree items-->
+					<div class="statistics-item__title"><!--117 inside the object there is title, number and description-->
+						Батарея
+					</div>
+					<div class="statistics-item__num"><!--117 inside the object there is title, number and description-->
+						1000 <span>км</span>
+					</div>
+					<div class="statistics-item__descr"><!--117 inside the object there is title, number and description-->
+						запас хода
+					</div>
+				</div>
+				<div class="statistics-item"><!--116 on tamplate there is tree items, make tree items-->
+					<div class="statistics-item__title"><!--117 inside the object there is title, number and description-->
+						Скорость
+					</div>
+					<!--<div class="statistics-item__num"><!--117 inside the object there is title, number and description-->
+					<div class="statistics-item__num statistics-item__num--speed"><!--137 make double class for "plus"-->
+						400 <span>км/ч</span>
+					</div>
+					<div class="statistics-item__descr"><!--117 inside the object there is title, number and description-->
+						макс скорость
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<section class="video"><!--145 make section "images" for next image on template--><!--307 change class images on video-->
+		<div class="container"><!--149 add for centering and properties for class "container"-->
+			<!--308 comment <img src="images/section-img.jpg" alt=""><!--146 add the image, get from template-->
+			<iframe width="100%" height="400" src="https://www.youtube.com/embed/tw4jkyfY4HE" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe><!--309 insert video from youtube -> button "поделиться" -> button "встроить" -> copy iframe-->
+		</div>
+	</section>
+
+	<section class="advantages"><!--150 make section "advantages" for next block on template-->
+		<div class="container"><!--151 add for centering and properties for class "container"-->
+			<div class="advantages-inner"><!--152 div for the following items-->
+				<div class="advantages-inner__row"><!--153 div for the items "advantages-descr" and "advantages__img"-->
+					
+					<div class="advantages-descr"><!--154 div for the items "advantages__title" and "advantages__text"-->
+						<div class="advantages__title"><!--155 div for the title-->	
+							Скорость
+						</div>
+						<div class="advantages__text"><!--156 div for the text-->
+							Самый 
+							быстроразгоняющийся 
+							серийный автомобиль 
+							из когда-либо созданных
+						</div>
+					</div>
+
+					<div class="advantages__img"><!--157 div for the img-->	
+						<img src="images/advantages-1.jpg" alt=""><!--158 add the image, get from template-->
+					</div>
+
+				</div>
+				<!--359 adding double class "advantages-inner__row--mobile" for mobile version-->
+				<div class="advantages-inner__row advantages-inner__row--mobile"><!--153 div for the items "advantages-descr" and "advantages__img"-->
+					
+					<div class="advantages__img"><!--157 div for the img-->	
+						<img src="images/advantages-2.jpg" alt=""><!--158 add the image, get from template-->
+					</div>
+
+					<div class="advantages-descr"><!--154 div for the items "advantages__title" and "advantages__text"-->
+						<div class="advantages__text"><!--156 div for the text-->
+							<ul><!--159 add ul - tag defines an unordered (неупорядоченный)-->
+								<li>Датчик дождя</li><!--160 add li - tag defines a list item-->
+								<li>Датчик света</li>
+								<li>Автопилот</li>
+								<li>Навигационная система</li>
+								<li>Обогрев зеркал</li>
+								<li>Усилитель руля</li>
+								<li>Панорамная крыша</li>
+								<li>Ксеноновые фары</li>
+							</ul>
+						</div>
+						<div class="advantages__title advantages__title--bottom"><!--155 div for the title--><!--181 second class for the title-->	
+							Преимущества
+						</div>
+					</div>
+
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<section class="design"><!--186 make section "design" for next block on template-->
+		<div class="container"><!--187 add for centering and properties for class "container"-->
+			<div class="design__images"><!--188 div for the img-->
+				<img src="images/design.jpg" alt=""><!--189 add the image, get from template-->
+			</div>
+			<div class="design-row"><!--190 div for the following items-->
+				<div class="design-row__item"><!--191 div for the items "design-row__item-num" and "design-row__item-text"-->
+					<div class="design-row__item-num"><!--192 div for the number-->
+						01
+					</div>
+					<div class="design-row__item-text"><!--193 div for the text-->
+						Новый родстер был разработан бывшим дизайнером Mazda Францем фон Хольцхаузеном. 
+						Имеет съёмную стеклянную крышу и кузов с двумя передними сиденьями плюс два небольших сиденья сзади.
+					</div>
+				</div>
+				<div class="design-row__item"><!--191 div for the items "design-row__item-num" and "design-row__item-text"-->
+					<div class="design-row__item-num"><!--192 div for the number-->
+						02
+					</div>
+					<div class="design-row__item-text"><!--193 div for the text-->
+						Родстер имеет три электродвигателя, один спереди и два сзади, 
+						Они обеспечивают полный привод, а также систему адресного распределения крутящего момента для лучшего прохождения поворотов.	
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<footer class="footer"><!--212 make footer "footer" for next block on template-->
+		<div class="container"><!--213 add for centering and properties for class "container"-->
+			<div class="footer-btn"><!--214 div for the button-->
+				<a class="page-btn" href="#"><!--215 copy button "Хочу тест драйв" in header-content-->
+					Хочу тест драйв
+				</a>
+			</div>
+			<div class="footer-copy"><!--216 div for the "footer-copy"-->
+				<ul><!--217 add ul - tag defines an unordered (неупорядоченный)-->
+					<li>Tesla © 2020</li><!--218 add li - tag defines a list item-->
+					<li><a href="#">Privacy & Legal</a></li>
+					<li><a href="#">Contact</a></li>
+					<li><a href="#">Careers</a></li>
+					<li><a href="#">Get Newsletter</a></li>
+					<li><a href="#">Forums</a></li>
+					<li><a href="#">Locations</a></li>
+				</ul>
+			</div>
+		</div>
+	</footer>
+
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+	<script src="js/slick.min.js"></script><!--73 connect slick.min.js-->
+	<script src="js/main.js"></script><!--74 "how" main.js should be the last-->
 </body>
 </html>
